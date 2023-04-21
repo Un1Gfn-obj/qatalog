@@ -1,0 +1,29 @@
+CMake
+
+Ninja
+
+PySide6
+
+imgur UI demo
+
+Qt Designer
+Qt Creator
+
+/qatalog
+|-- cmdgen(~/sphinx.public/cheatsheet.rst)
+|   |-- expac ---<---
+|   |-- ffmpeg
+|   |-- find
+|   `-- pdfjam
+|-- pkg
+|   |-- expac ---<---
+|   `-- pkgdict
+
+/root
+|-- dirX
+|   |-- dat1
+|   |-- dat2
+|   `-- dat3
+|-- dirY
+`-- dirZ
+
