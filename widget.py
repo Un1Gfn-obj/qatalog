@@ -6,6 +6,7 @@ from PySide6 import (
 )
 
 import qyalash.widget
+import pdf.widget
 
 class Widget(QtWidgets.QWidget):
 
@@ -32,5 +33,5 @@ class Widget(QtWidgets.QWidget):
         self.l2w = None
         self.layout = QtWidgets.QVBoxLayout(self)
         self.b(qyalash.widget, "qyalash", "clash process manager (Linux only)")
-        # self.b(pdf.widget,     "pdf",     None)
+        self.b(pdf.widget,     "pdf",     None)
 
