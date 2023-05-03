@@ -1,10 +1,10 @@
 import random
 import psutil
-import qyutil
 from PySide6 import QtCore, QtWidgets, QtGui
 
+from . import util
 
-class QyWidget(QtWidgets.QWidget):
+class Widget(QtWidgets.QWidget):
 
     def mkbutton(self, name, **kwargs):
 
@@ -34,7 +34,7 @@ class QyWidget(QtWidgets.QWidget):
         self.mkbutton("update", slot=None)
         self.br = self.mkbutton("run",    slot=self.wu1vzk)
         self.bk = self.mkbutton("kill",   slot=self.ncs3u8, tooltip="terminate clash, keep log")
-        if qyutil.running():
+        if util.running():
             self.br.setFlat(True)
             self.bk.setFlat(False)
         else:
@@ -49,21 +49,21 @@ class QyWidget(QtWidgets.QWidget):
 
     @QtCore.Slot()
     def wu1vzk(self):
-        if qyutil.running():
+        if util.running():
             QtWidgets.QMessageBox.critical(self, " ", "already running")
         else:
-            qyutil.run()
+            util.run()
             QtWidgets.QMessageBox.information(self, " ", "OK")
             self.br.setFlat(True)
             self.bk.setFlat(False)
 
     @QtCore.Slot()
     def kx26k8(self):
-        qyutil.log()
+        util.log()
 
     @QtCore.Slot()
     def ncs3u8(self):
-        qyutil.kill()
+        util.kill()
         QtWidgets.QMessageBox.information(self, " ", "terminated")
         self.br.setFlat(False)
         self.bk.setFlat(True)
